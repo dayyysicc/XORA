@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Pemesanan</title>
+    <link rel="stylesheet" href="css/pemesanan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+    <main class="pemesanan">
+        <header class="pemesanan-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="detail-title">
+                <h1>Pilih Jadwal Tayang</h1>
+            </div>
+        </header>
+
+        <section class="info-film">
+            <section class="poster-film">
+                <img id="posterFilm" src="" alt="">
+            </section>
+            <section class="detail-sinopsis">
+                <h2 id="judulFilm"></h2>
+                <p class="sinopsis" id="sinopsisFilm"></p>
+                <p class="genre">
+                    <strong id="genreFilm"></strong>
+                </p>
+                <p class="rating">
+                    <strong id="ratingFilm"></strong>
+                </p>
+            </section>
+        </section>
+
+        <div class="input-group">
+            <label><strong>Jumlah Tiket</strong></label>
+            <div class="jumlah-tiket">
+                <button type="button" id="minusTiket">-</button>
+                <span id="jumlahTiket">1</span>
+                <button type="button" id="plusTiket">+</button>
+            </div>
+        </div>
+
+        <form id="formPemesanan" class="form-pemesanan" action="pilih-kursi.html">
+            <div class="isi-form">
+                <label for="lokasi">Lokasi</label>
+                <div class="select-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <select id="lokasi" name="lokasi" required>
+                        <option value="" selected disabled>Pilih Lokasi</option>
+                        <option value="ciledug">Ciledug</option>
+                        <option value="jaksel">Jakarta Selatan</option> 
+                    </select>
+                </div>
+            </div>
+
+            <div class="isi-form">
+                <label for="bioskop">Bioskop</label>
+                <div class="select-box">
+                    <i class="fa-solid fa-film"></i>
+                    <select id="bioskop" name="bioskop" required disabled>
+                        <option value="" selected disabled>Pilih Lokasi Terlebih Dahulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="isi-form">
+                <label for="tanggal">Tanggal</label>
+                <div class="input-box">
+                    <input type="date" id="tanggal" name="tanggal">
+                </div>
+            </div>
+
+            <div class="isi-form">
+                <label for="jam-tayang">Jam Tayang</label>
+                <div class="jam-list">
+                    <button type="button" class="jam-btn">
+                        11.00
+                    </button>
+                    <button type="button" class="jam-btn">
+                        14.10
+                    </button>
+                    <button type="button" class="jam-btn">
+                        17.00
+                    </button>
+                    <button type="button" class="jam-btn">
+                        19.30
+                    </button>
+                    <button type="button" class="jam-btn">
+                        20.45
+                    </button>
+                    <button type="button" class="jam-btn">
+                        21.00
+                    </button>
+                </div>
+            </div>
+
+            <div class="harga">
+                <span>Harga Tiket</span>
+                <strong id="hargaTiket"></strong>
+            </div>
+
+            <div class="potongan">
+                <span>Potongan</span>
+                <strong>Rp 0</strong>
+            </div>
+
+            <button type="submit" class="form-btn">
+                Lanjut Pilih Kursi
+            </button>
+        </form>
+
+    </main>
+    <script src="js/movies.js"></script>
+    <script src="js/bioskop.js"></script>
+    <script src="js/pemesanan.js"></script>
+
+</body>
+</html>

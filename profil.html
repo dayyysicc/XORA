@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Profil</title>
+    <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="profil-container">
+        <header class="profil-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1>Profil</h1>
+        </header>
+
+        <section class="profil-card">
+            <div class="profil-foto">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+
+            <div class="profil-fields">
+                <div class="profil-field">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="namaLengkap" disabled>
+                </div>
+
+                <div class="profil-field">
+                    <label>Username</label>
+                    <input type="text" id="username" disabled>
+                </div>
+
+                <div class="profil-field">
+                    <label>Email</label>
+                    <input type="email" id="email" disabled>
+                </div>
+
+                <div class="profil-field-row">
+                    <div class="profil-field">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" id="tanggalLahir" disabled>
+                    </div>
+
+                    <div class="profil-field">
+                        <label>No. Handphone</label>
+                        <input type="text" id="noHp" disabled>
+                    </div>
+                </div>
+
+                <div class="profil-actions">
+                    <button class="btn-edit" id="btnEdit">Edit Profil</button>
+                    <button class="btn-simpan" id="btnSimpan" style="display:none;">Simpan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- POPUP SUKSES SIMPAN -->
+        <div class="popup-overlay" id="suksesPopup">
+            <div class="popup-box">
+                <div class="popup-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3>Profil Diperbarui</h3>
+                <p>Perubahan profil kamu berhasil disimpan.</p>
+                <button class="btn-tutup-popup" id="tutupSuksesPopup">Oke</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/profil.js"></script>
+</body>
+</html>

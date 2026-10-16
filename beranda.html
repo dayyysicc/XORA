@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Beranda</title>
+    <link rel="stylesheet" href="css/beranda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="profile">
+                <i class="fa-regular fa-circle-user profile-icon"></i>
+                <h3 class="profile-name">Guest</h3>
+            </div>
+            <button class="close-btn" id="closeSidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="profil.html" class="sidebar-btn active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="riwayat.html" class="sidebar-btn">
+                <i class="fa-solid fa-ticket"></i>
+                <span>Riwayat Transaksi</span>
+            </a>
+
+            <a href="pengaturan.html" class="sidebar-btn">
+                <i class="fa-solid fa-gear"></i>
+                <span>Pengaturan</span>
+            </a>
+
+            <a href="info.html?tab=bantuan" class="sidebar-btn">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Pusat Bantuan</span>
+            </a>
+
+            <a href="info.html?tab=tentang" class="sidebar-btn">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Tentang Aplikasi</span>
+            </a>
+
+            <button class="sidebar-btn logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                <span>Keluar Akun</span>
+            </button>
+        </nav>
+    </aside>
+
+    <main class="beranda-container">
+        <header class="hero">
+
+            <div class="hero-top">
+
+                <div class="lokasi-wrapper">
+                    <button class="lokasi-btn" id="lokasiBtn">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="lokasiText">Pilih Lokasi</span>
+                    </button>
+
+                    <div class="lokasi-menu" id="lokasiMenu">
+                        <div class="lokasi-option" data-value="ciledug">Ciledug</div>
+                        <div class="lokasi-option" data-value="jaksel">Jakarta Selatan</div>
+                        <div class="lokasi-option lokasi-reset" data-value="">Semua Lokasi</div>
+                    </div>
+                </div>
+
+                <div class="search-wrapper">
+                    <form class="search-form" id="searchForm">
+                        <input
+                            type="search"
+                            class="search-input"
+                            id="searchInput"
+                            placeholder="Cari film..."
+                            autocomplete="off">
+
+                        <button class="search-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+
+                    <div class="search-results" id="searchResults">
+                        <!-- diisi otomatis lewat js/beranda.js, hasil pencarian dari movies.js -->
+                    </div>
+                </div>
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="beranda-iklan">
+            <div class="iklan">
+                <img src="images/iklan 1.png" alt="iklan 1">
+                <img src="images/iklan 2.png" alt="iklan 2">
+                <img src="images/iklan 3.png" alt="iklan 3">
+            </div>
+        </section>
+
+        <nav class="dashboard">
+            <div class="dashboard-list">
+                <a href="sedang-tayang.html" class="dashboard-btn sedang-tayang">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Sedang Tayang</span></a>
+                <a href="segera-hadir.html" class="dashboard-btn segera-hadir">
+                    <i class="fa-solid fa-film"></i>
+                    <span>Segera Hadir</span></a>
+                <a href="bioskop.html" class="dashboard-btn bioskop">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Bioskop</span></a>
+                <a href="lain-lain.html?type=snack" class="dashboard-btn drink-snack">
+                    <i class="fa-solid fa-martini-glass"></i>
+                    <span>Drink<br>Snack</span></a>
+                <a href="lain-lain.html?type=voucher" class="dashboard-btn promo-voucher">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Promo<br>Voucher</span></a>
+            </div>
+        </nav>
+
+        <section class="rekomendasi">
+            <div class="rekomendasi-title">
+                <h2>Rekomendasi</h2>
+            </div>
+            <div class="rekomendasi-list">
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=oppenheimer">
+                        <img src="images/film 1.png" alt="Film 1">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=satukakaktujuhponakan">
+                        <img src="images/film 2.png" alt="Film 2">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=radensaleh">
+                        <img src="images/film 3.png" alt="Film 3">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=agaklaen">
+                        <img src="images/film 4.png" alt="Film 4">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=jumanji">
+                        <img src="images/film 5.png" alt="Film 5">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=dune">
+                        <img src="images/film 6.png" alt="Film 6">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=johnwick">
+                        <img src="images/film 7.png" alt="Film 7">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=jumbo">
+                        <img src="images/film 8.png" alt="Film 8">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=ghostinthecell">
+                        <img src="images/film 9.png" alt="Film 9">
+                    </a>
+                </div>
+                <div class="rekomendasi-item">
+                    <a href="detail-film.html?id=badboys">
+                        <img src="images/film 10.png" alt="Film 10">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- POPUP KONFIRMASI LOGOUT -->
+        <div class="popup-overlay" id="logoutPopup">
+            <div class="popup-box">
+                <h3>Keluar Akun?</h3>
+                <p>Kamu yakin mau keluar dari akun ini?</p>
+                <div class="popup-actions">
+                    <button class="btn-batal" id="batalLogout">Batal</button>
+                    <button class="btn-konfirmasi" id="konfirmasiLogout">Ya, Keluar</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/movies.js"></script>
+    <script src="js/beranda.js"></script>
+</body>
+</html>

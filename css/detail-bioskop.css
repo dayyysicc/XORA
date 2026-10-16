@@ -1,0 +1,11 @@
+.section-title{
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.section-title-batas{
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Pilih Kursi</title>
+    <link rel="stylesheet" href="css/pilih-kursi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="pilih-kursi">
+
+        <header class="kursi-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h1>Pilih Kursi</h1>
+        </header>
+
+        <section class="info-film">
+
+            <div class="poster-film">
+                <img id="posterFilm" src="" alt="">
+            </div>
+
+            <div class="film-info">
+                <h2 id="judulFilm"></h2>
+                <div class="lokasi">
+                    <p id="bioskop"></p>
+                    <p id="lokasi"></p>
+                </div>
+                <div class="jadwal">
+                    <p id="tanggal"></p>
+                    <p id="jam"></p>
+                </div>
+            </div>
+
+            <div class="detail-list">
+                <div class="detail-item">
+                    <span>Studio</span>
+                    <span id="studio"></span>
+                </div>
+
+                <div class="detail-item">
+                    <span>Jumlah Tiket</span>
+                    <span id="jumlahTiket"></span>
+                </div>
+
+                <div class="detail-item">
+                    <span>Harga Tiket</span>
+                    <span id="hargaTiket"></span>
+                </div>
+
+                <div class="detail-item">
+                    <span>No. Kursi</span>
+
+                    <div class="kursi-terpilih" id="kursiTerpilih">
+                        <span>Belum dipilih</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="legend">
+
+            <div class="item">
+                <span class="box tersedia"></span>
+                <p>Tersedia</p>
+            </div>
+
+            <div class="item">
+                <span class="box terisi"></span>
+                <p>Terisi</p>
+            </div>
+
+            <div class="item">
+                <span class="box pilih"></span>
+                <p>Pilihanmu</p>
+            </div>
+
+        </section>
+
+        <section class="seat-container">
+            <div class="seat-row">
+                <span class="row-name">A</span>
+                <button class="seat tersedia" data-seat="A1">A1</button>
+                <button class="seat tersedia" data-seat="A2">A2</button>
+                <button class="seat terisi" data-seat="A3" disabled>A3</button>
+                <button class="seat tersedia" data-seat="A4">A4</button>
+                <button class="seat tersedia" data-seat="A5">A5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="A6">A6</button>
+                <button class="seat tersedia" data-seat="A7">A7</button>
+                <button class="seat tersedia" data-seat="A8">A8</button>
+                <button class="seat tersedia" data-seat="A9">A9</button>
+                <button class="seat tersedia" data-seat="A10">A10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">B</span>
+                <button class="seat tersedia" data-seat="B1">B1</button>
+                <button class="seat tersedia" data-seat="B2">B2</button>
+                <button class="seat terisi" data-seat="B3" disabled>B3</button>
+                <button class="seat terisi" data-seat="B4" disabled>B4</button>
+                <button class="seat terisi" data-seat="B5" disabled>B5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="B6">B6</button>
+                <button class="seat tersedia" data-seat="B7">B7</button>
+                <button class="seat tersedia" data-seat="B8">B8</button>
+                <button class="seat tersedia" data-seat="B9">B9</button>
+                <button class="seat tersedia" data-seat="B10">B10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">C</span>
+                <button class="seat tersedia" data-seat="C1">C1</button>
+                <button class="seat terisi" data-seat="C2" disabled>C2</button>
+                <button class="seat terisi" data-seat="C3" disabled>C3</button>
+                <button class="seat tersedia" data-seat="C4">C4</button>
+                <button class="seat tersedia" data-seat="C5">C5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="C6">C6</button>
+                <button class="seat tersedia" data-seat="C7">C7</button>
+                <button class="seat tersedia" data-seat="C8">C8</button>
+                <button class="seat terisi" data-seat="C9" disabled>C9</button>
+                <button class="seat terisi" data-seat="C10" disabled>C10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">D</span>
+                <button class="seat tersedia" data-seat="D1">D1</button>
+                <button class="seat tersedia" data-seat="D2">D2</button>
+                <button class="seat tersedia" data-seat="D3">D3</button>
+                <button class="seat tersedia" data-seat="D4">D4</button>
+                <button class="seat tersedia" data-seat="D5">D5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="D6">D6</button>
+                <button class="seat tersedia" data-seat="D7">D7</button>
+                <button class="seat tersedia" data-seat="D8">D8</button>
+                <button class="seat tersedia" data-seat="D9">D9</button>
+                <button class="seat tersedia" data-seat="D10">D10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">E</span>
+                <button class="seat tersedia" data-seat="E1">E1</button>
+                <button class="seat tersedia" data-seat="E2">E2</button>
+                <button class="seat tersedia" data-seat="E3">E3</button>
+                <button class="seat tersedia" data-seat="E4">E4</button>
+                <button class="seat tersedia" data-seat="E5">E5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="E6">E6</button>
+                <button class="seat terisi" data-seat="E7" disabled>E7</button>
+                <button class="seat terisi" data-seat="E8" disabled>E8</button>
+                <button class="seat terisi" data-seat="E9" disabled>E9</button>
+                <button class="seat tersedia" data-seat="E10">E10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">F</span>
+                <button class="seat tersedia" data-seat="F1">F1</button>
+                <button class="seat tersedia" data-seat="F2">F2</button>
+                <button class="seat terisi" data-seat="F3" disabled>F3</button>
+                <button class="seat tersedia" data-seat="F4">F4</button>
+                <button class="seat tersedia" data-seat="F5">F5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="F6">F6</button>
+                <button class="seat tersedia" data-seat="F7">F7</button>
+                <button class="seat tersedia" data-seat="F8">F8</button>
+                <button class="seat tersedia" data-seat="F9">F9</button>
+                <button class="seat tersedia" data-seat="F10">F10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">G</span>
+                <button class="seat tersedia" data-seat="G1">G1</button>
+                <button class="seat tersedia" data-seat="G2">G2</button>
+                <button class="seat terisi" data-seat="G3" disabled>G3</button>
+                <button class="seat tersedia" data-seat="G4">G4</button>
+                <button class="seat tersedia" data-seat="G5">G5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="G6">G6</button>
+                <button class="seat tersedia" data-seat="G7">G7</button>
+                <button class="seat tersedia" data-seat="G8">G8</button>
+                <button class="seat tersedia" data-seat="G9">G9</button>
+                <button class="seat tersedia" data-seat="G10">G10</button>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-name">H</span>
+                <button class="seat tersedia" data-seat="H1">H1</button>
+                <button class="seat tersedia" data-seat="H2">H2</button>
+                <button class="seat terisi" data-seat="H3" disabled>H3</button>
+                <button class="seat tersedia" data-seat="H4">H4</button>
+                <button class="seat tersedia" data-seat="H5">H5</button>
+
+                <div class="aisle"></div>
+
+                <button class="seat tersedia" data-seat="H6">H6</button>
+                <button class="seat tersedia" data-seat="H7">H7</button>
+                <button class="seat tersedia" data-seat="H8">H8</button>
+                <button class="seat tersedia" data-seat="H9">H9</button>
+                <button class="seat tersedia" data-seat="H10">H10</button>
+            </div>
+        
+        </section>
+
+        <section class="screen">
+            <p>LAYAR</p>
+        </section>
+
+        <footer class="kursi-footer">
+            <button class="btn-lanjut" disabled>
+                Lanjut Pembayaran
+            </button>
+        </footer>
+
+    </main>
+    <script src="js/movies.js"></script>
+    <script src="js/pilih-kursi.js"></script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+/* ===================
+    RESET
+====================== */
+/* menghilangkan margin dan pading bawaan browser */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* ===================
+    BODY
+====================== */
+body{
+    /* backgruound utama */
+    background-image: url("../images/vector.png");
+    /* agak background memenuhi layar */
+    background-size: cover;
+    /* posisi background di tengah */
+    background-position: center;
+    /* background tidak diulang */
+    background-repeat: no-repeat;
+    /* warna default smua tulisan */
+    color: #D9D9D9;
+    /* font utama */
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* ===================
+    SIDEBAR
+======================*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -25%;
+    width: 25%;
+    height: 100vh;
+
+    background-image: url("../images/vector.png");
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: .35s ease;
+    z-index: 999;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header{
+    display:flex;
+    /* isi kiri dan kanan berjauhan */
+    justify-content:space-between;
+    /* posisi icon sejajar dengan tesk */
+    align-items:center;
+    /* jarak dengan menu di bawahnya */
+    margin-bottom:35px;
+}
+
+.profile{
+    display:flex;
+    /* posisi vertikal di tengah */
+    align-items:center;
+    /* jarak icon dan tulisan */
+    gap:10px;
+}
+
+/* nama user */
+.profile h3{
+    /* warna tulisan */
+    color:#FFFFFF;
+    /* ukuran font */
+    font-size:18px;
+}
+
+/* ikuran dan warna icon profil */
+.profile-icon{
+    font-size:46px;
+    color:#39FF14;
+}
+
+/* close button */
+.close-btn{
+    /* menghilangkan background tombol dan border */
+    background:none;
+    border:none;
+    /* warna icon */
+    color:#FFFFFF;
+    
+    /* ukuran icon */
+    font-size:28px;
+    /* cursor berubah menjadi pointer */
+    cursor:pointer;
+    /* animasi hover */
+    transition:.3s;
+}
+
+/* warna hover pada close button */
+.close-btn:hover{
+    color:#39FF14;
+}
+
+/* menu */
+.sidebar-menu{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.sidebar-btn{
+    display:flex;
+    /* posisi vertikal di tengah */
+    align-items:center;
+    /* jarak icon dan teks */
+    gap:18px;
+
+    /* ruang dalam tombol */
+    padding:14px 16px;
+    /* sudut */
+    border-radius:10px;
+    
+    /* warna tulisan */
+    color:#D9D9D9;
+    /* menghilangkan garis bawah pada link */
+    text-decoration:none;
+    transition:.3s;
+}
+
+/* icon sidebar */
+.sidebar-btn i{
+    /* lebar, posisi, ukuran */
+    width:24px;
+    text-align:center;
+    font-size:20px;
+}
+
+/* hover  */
+.sidebar-btn:hover{
+    /* warna background, warna teks, geser ke kanan 5px */
+    background:#171717;
+    color:#39FF14;
+    transform:translateX(5px);
+}
+
+/* warna icon pada menu sidebar */
+.profile-btn i{
+    color:#39FF14;
+}
+
+.history-btn i{
+    color:#FFD43B;
+}
+
+.setting-btn i{
+    color:#4DB8FF;
+}
+
+.help-btn i{
+    color:#B983FF;
+}
+
+.about-btn i{
+    color:#FF8C42;
+}
+
+.logout-btn i{
+    color:#FF5C5C;
+}
+
+.logout{
+    margin-top: auto;
+    padding-top: 20px;
+    /* garis pembatas */
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.logout-btn{
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* =======================
+    BERANDA CONTAINER
+========================== */
+.beranda-container{
+    /* lebar mengikuti ukuran layar */
+    width:100%;
+    /* lebar maksimal */
+    max-width:1280px;
+    /* tinggi minimal memenuhi layar */
+    min-height:100vh;
+
+    /* posisi container di tengah */
+    margin:auto;
+    /* jarak isi dengan tepi */
+    padding:30px 40px;
+}
+
+/* ====================
+    HERO
+======================= */
+/* lebar dan jarak slider di bawahnya */
+.hero{
+    width:100%;
+    margin-bottom:35px;
+}
+
+/* untuk baris yg beriisi lokasi, search, menu */
+.hero-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* =====================
+    LOKASI
+======================== */
+/* tombol lokasi */
+.lokasi-btn{
+    /* icon dan teks sejajar */
+    display:flex;
+    /* posisi icon dan teks di tengah */
+    align-items:center;
+    /* jarak icon dengan teks */
+    gap:8px;
+
+    /* tinggi tombol */
+    height:50px;
+    /* jarak isi dengan tepi tombol */
+    padding:0 18px;
+
+    /* menhilangkan border bawaan */
+    border:none;
+    /* sudut pada tombol */
+    border-radius:12px;
+
+    /* warna background dan teks */
+    background:#1A1A1A;
+    color:#FFFFFF;
+
+    /* cursor dan mencegar tulisan turun kebawah */
+    cursor:pointer;
+    white-space:nowrap;
+
+    /* animasi hover */
+    transition:.3s;
+}
+ /* warna icon dan hover */
+.lokasi-btn i{
+    color:#39FF14;
+}
+.lokasi-btn:hover{
+    background:#252525;
+}
+
+/* ====================
+    SEARCH
+======================= */
+.search-form{
+    /* mengambil sisa ruang kosong */
+    flex:1;
+
+    /* input dan tombol search sejajar */
+    display:flex;
+    /* posisi vertikal di tengah */
+    align-items:center;
+}
+
+/* input pencarian */
+.search-input{
+    /* mengisi seluruh ruang form */
+    flex:1;
+    /* tinggi */
+    height:50px;
+    /* jarak dari pinggir */
+    padding:0 18px;
+
+    /* menghilangkan border dan outline saat di klik */
+    border:none;
+    outline:none;
+    /* sudut  */
+    border-radius:12px 0 0 12px;
+
+    /* warna background, teks, dan ukuran font */
+    background:#1A1A1A;
+    color:#FFFFFF;
+    font-size:15px;
+}
+
+/* warna pada placeholder */
+.search-input::placeholder{
+    color:#8F8F8F;
+}
+
+/* tombol search */
+.search-btn{
+    /* tinggi, lebar, menghilangkan border, dan membulatkan sudut kanan */
+    width:70px;
+    height:50px;
+    border:none;
+    border-radius:0 12px 12px 0;
+
+    /* warna background, teks, cursor dan transisi hover */
+    background:#06402B;
+    color:#FFFFFF;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* warna hover pada button search */
+.search-btn:hover{
+    background:#0A5C3E;
+}
+
+/* ==================
+    MENU HAMBURGER
+===================== */
+.menu-btn{
+    /* tinggi, lebar, menghilangkan border, membulatkan sudut tombol  */
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:12px;
+
+    /* warna background, teks, urukan font, cursor dan transisi hover */
+    background:#1A1A1A;
+    color:#FFFFFF;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* warna hover pada menu hamburger */
+.menu-btn:hover{
+    background:#252525;
+    color:#39FF14;
+}
+
+/* ===================
+    BANNER IKLAN  
+====================== */
+/* jarak atas dan bawah pada section beranda slider */
+.beranda-iklan{
+    margin:35px 0;
+}
+
+/* container smua banner iklan */
+.iklan{
+    /* menggunakan flexbox, posisi di tengah, dengan jarak 15px */
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+/* gambar banner iklan */
+.iklan img{
+    /* lebar gambar, lebar max, sudut gambar */
+    width:100%;
+    max-width:320px;
+    border-radius:15px;
+    /* menghilangkan spasi bawaan img */
+    display:block;
+
+    /* animasi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+    transition: transform .35s ease,
+                box-shadow .35s ease,
+                filter .35s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.iklan img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 18px 35px rgba(0,0,0,.45);
+    filter: brightness(1.1);
+}
+
+/* =================
+    DASHBOARD
+==================== */
+.dashboard{
+    /* jarak atas dan bawah */
+    margin:30px 0;
+}  
+
+/* container menu dashboard */
+.dashboard-list{
+    display:flex;
+    gap: 35px;
+    justify-content: center;
+}
+
+/* tombol dashboard */
+.dashboard-btn{
+    width: 110px;
+    /* icon dan teks di susun vertikal */
+    display: flex;
+    /* susunan dari atas ke bawah */
+    flex-direction: column;
+    /* isi rata di tengah */
+    align-items: center;
+    gap: 12px;
+    transition: .3s ease;
+    text-decoration: none;
+    color: #D9D9D9;
+}
+
+/* ukuran icon pada dashboard */
+.dashboard-btn i{
+    font-size: 30px;
+}
+
+/* tulisan pada dashboard */
+.dashboard-btn span{
+    /* size font, warna, posisi */
+    font-size: 14px;
+    color: #D9D9D9;
+    text-align: center;
+}
+
+/* warna icon pada dashboard */
+.sedang-tayang i{
+    color:#22C55E;
+}
+
+.segera-hadir i{
+    color:#FACC15;
+}
+
+.bioskop i{
+    color:#38BDF8;
+}
+
+.drink-snack i{
+    color:#FB923C;
+}
+
+.promo-voucher i{
+    color:#A855F7;
+}
+
+/* hover pada icon dan tulisan */
+.dashboard-btn:hover i,
+.dashboard-btn:hover span{
+    color:#FFFFFF;
+}
+
+/* hover tombol */
+.dashboard-btn:hover{
+    transform: translateY(-5px);
+}
+
+/* ====================
+    REKOMENDASI 
+======================= */
+
+/* jarak */
+.rekomendasi{
+    margin:20px 0;
+}
+
+/* jarak bawah antara title dan gambar */
+.rekomendasi-title{
+    margin-bottom:30px;
+}
+
+/* sama aja si kyknya */
+.rekomendasi-title h2{
+    font-size:34px;
+}
+
+/* tampilan gambar film */
+.rekomendasi-list{
+    display:grid;
+    /* film turun kebawah setiap 5 gambar */
+    grid-template-columns:repeat(5,160px);
+    justify-content:center;
+    gap:30px;
+}
+
+/* tinggi, sudut dan transisi hover pada gambar */
+.rekomendasi-item img{
+    width:160px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+/* animasi transisi */
+.rekomendasi-item img:hover{
+    transform:scale(1.05);
+}
+
+/* menghilangkan garis bawah */
+.rekomendasi-item a{
+    text-decoration: none;
+}
+
+/* ===================
+    SEARCH FILM
+====================== */
+.search-wrapper{
+    position: relative;
+    flex: 1;
+}
+
+.search-results{
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #171717;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px;
+    z-index: 50;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+.search-results.open{
+    display: block;
+}
+
+.search-item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: .2s;
+}
+
+.search-item:hover{
+    background: #222222;
+}
+
+.search-item img{
+    width: 44px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.search-item h4{
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search-item p{
+    color: #9c9c9c;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.search-kosong{
+    padding: 20px;
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 14px;
+}
+
+/* ===================
+    PILIH LOKASI
+====================== */
+.lokasi-wrapper{
+    position: relative;
+}
+
+.lokasi-menu{
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    min-width: 180px;
+    background: #171717;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.lokasi-menu.open{
+    display: block;
+}
+
+.lokasi-option{
+    padding: 12px 18px;
+    color: #D9D9D9;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.lokasi-option:hover{
+    background: #252525;
+    color: #39FF14;
+}
+
+.lokasi-reset{
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #999;
+    font-size: 13px;
+}
+
+/* popup logout */
+.popup-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.popup-box{
+    width: 340px;
+    max-width: 90vw;
+    background: #171717;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+.popup-box h3{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup-box p{
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.popup-actions{
+    display: flex;
+    gap: 12px;
+}
+
+.btn-batal,
+.btn-konfirmasi{
+    flex: 1;
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-batal{
+    background: #252525;
+    color: #D9D9D9;
+}
+
+.btn-batal:hover{
+    background: #333;
+}
+
+.btn-konfirmasi{
+    background: #0A5C3E;
+    color: #fff;
+}
+
+.btn-konfirmasi:hover{
+    background: #22C55E;
+}

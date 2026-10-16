@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Segera Hadir</title>
+    <link rel="stylesheet" href="css/segera-hadir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="segera-container">
+        <header class="segera-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1>Segera Hadir</h1>
+        </header>
+
+        <div class="filter-row">
+            <button class="filter-btn active" id="filterSemua">Semua</button>
+
+            <div class="filter-dropdown">
+                <button class="filter-btn" id="genreBtn">
+                    Genre <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="filter-menu" id="genreMenu">
+                    <!-- diisi otomatis lewat js/segera-hadir.js, dari genre yang ada di movies-segera.js -->
+                </div>
+            </div>
+        </div>
+
+        <section class="segera-grid" id="segeraGrid">
+            <!--
+                Diisi otomatis lewat js/segera-hadir.js.
+                Data diambil dari js/movies-segera.js.
+                Klik poster membuka popup sinopsis (bukan pindah
+                halaman), karena film belum tayang jadi belum
+                bisa dipesan tiketnya.
+            -->
+        </section>
+    </main>
+
+    <!-- POPUP SINOPSIS -->
+    <div class="popup-overlay" id="sinopsisPopup">
+        <div class="popup-box">
+            <button class="popup-close" id="closeSinopsisPopup" type="button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <img id="popupPoster" src="" alt="">
+            <h3 id="popupJudul"></h3>
+            <p class="popup-genre" id="popupGenre"></p>
+            <p class="popup-tanggal" id="popupTanggal"></p>
+            <p class="popup-sinopsis" id="popupSinopsis"></p>
+
+            <button class="ingatkan-btn" id="ingatkanBtn">
+                <i class="fa-regular fa-bell"></i>
+                <span>Ingatkan Saya</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/movies-segera.js"></script>
+    <script src="js/segera-hadir.js"></script>
+</body>
+</html>

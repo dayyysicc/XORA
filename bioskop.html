@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Bioskop</title>
+    <link rel="stylesheet" href="css/bioskop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="bioskop-container">
+        <header class="bioskop-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1>Bioskop</h1>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="searchBioskop" placeholder="Telusuri Bioskop">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <section class="bioskop-list" id="bioskopList">
+            <!-- diisi otomatis lewat js/bioskop-list.js, dari js/bioskop.js -->
+        </section>
+    </main>
+
+    <script src="js/bioskop.js"></script>
+    <script src="js/bioskop-list.js"></script>
+</body>
+</html>

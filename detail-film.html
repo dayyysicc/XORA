@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Detail Film</title>
+    <link rel="stylesheet" href="css/detail-film.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="detail-film">
+        <header class="detail-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="detail-title">
+                <h1 id="judulFilm"></h1>
+            </div>
+        </header>
+
+        <section class="info-film">
+            <section class="poster-film">
+                <img id="posterFilm" alt="poster film">
+            </section>
+
+            <section class="detail-sinopsis">
+                <h2>Sinopsis</h2>
+                <p class="sinopsis" id="sinopsisFilm"></p>
+                <p class="genre"><strong id="genreFilm"></strong></p>
+                <p class="rating"><strong id="ratingFilm"></strong></p>                
+            </section>
+
+        </section>
+
+        <section class="review">
+            <h2>Ulasan</h2>
+            <div id="reviewList">
+                <!--
+                    Diisi otomatis lewat js/detail-film.js.
+                    Jumlah ulasan gak tetap (tergantung berapa
+                    transaksi film ini yang sudah diulas), jadi
+                    wajib di-generate via JS, bukan ditulis manual.
+                -->
+            </div>
+        </section>
+
+        <!-- POPUP EDIT ULASAN -->
+        <div class="popup-overlay" id="ulasanPopup">
+            <div class="popup-box">
+                <button class="popup-close" id="closeUlasanPopup">&times;</button>
+                <h3>Edit Ulasan Anda</h3>
+
+                <div class="star-rating" id="starRating">
+                    <i class="fa-solid fa-star" data-value="1"></i>
+                    <i class="fa-solid fa-star" data-value="2"></i>
+                    <i class="fa-solid fa-star" data-value="3"></i>
+                    <i class="fa-solid fa-star" data-value="4"></i>
+                    <i class="fa-solid fa-star" data-value="5"></i>
+                </div>
+
+                <textarea
+                    id="ulasanText"
+                    class="ulasan-textarea"
+                    placeholder="Ceritakan pengalamanmu nonton film ini..."
+                    rows="4"></textarea>
+
+                <button class="btn-kirim-ulasan" id="btnKirimUlasan">Simpan</button>
+            </div>
+        </div>
+
+        <footer class="detail-footer">
+            <button class="buy-btn" id="buyBtn">
+                Lanjut Untuk Beli Tiket
+            </button>
+        </footer>
+    </main>
+    <script src="js/movies.js"></script>
+    <script src="js/detail-film.js"></script>
+</body>
+</html>

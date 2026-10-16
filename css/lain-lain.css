@@ -1,0 +1,168 @@
+/* ===================
+    RESET
+====================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #050505;
+    background-image: url("../images/vector.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #D9D9D9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===================
+    CONTAINER
+====================== */
+.lain-container{
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    margin: auto;
+}
+
+/* ===================
+    HEADER
+====================== */
+.lain-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.lain-header h1{
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+.kembali-btn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #1a1a1a;
+    color: #FFFFFF;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.kembali-btn:hover{
+    background: #252525;
+    color: #39FF14;
+}
+
+/* ===================
+    FILTER
+====================== */
+.filter-row{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.filter-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #1a1a1a;
+    color: #D9D9D9;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-btn.active{
+    background: #18C964;
+    color: #fff;
+    font-weight: bold;
+}
+
+.filter-btn:hover:not(.active){
+    background: #252525;
+}
+
+/* ===================
+    GRID
+====================== */
+.lain-grid{
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+}
+
+.lain-grid.grid-makanan{
+    grid-template-columns: repeat(4, 190px);
+}
+
+.lain-grid.grid-promo{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.lain-card{
+    background: #171717;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: .3s;
+    padding: 8px;
+}
+
+.lain-card:hover{
+    border-color: #39FF14;
+    transform: translateY(-2px);
+}
+
+.lain-card img{
+    width: 100%;
+    max-width: 220px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.lain-card.tipe-makanan img{
+    aspect-ratio: 2/3;
+    max-width: 160px;
+}
+
+.lain-card.tipe-promo img{
+    aspect-ratio: 16/9;
+    max-width: none;
+    object-fit: contain;
+}
+
+.lain-card h4{
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 12px 12px 2px;
+    text-align: center;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lain-harga{
+    color: #18C964;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 12px 12px;
+    text-align: center;
+}

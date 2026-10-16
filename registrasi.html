@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Registrasi</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <main class="register-container">
+        <!-- register content -->
+        <section class="register-content">
+            <h1 class="form-title">REGISTRASI</h1>
+            <form id="registerForm" class="register-form">
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="input-box"
+                    placeholder="Username"
+                    required>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="input-box"
+                    placeholder="Email"
+                    required>
+
+                <input
+                    type="date"
+                    id="tanggalLahir"
+                    name="tanggalLahir"
+                    class="input-box"
+                    required>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="input-box"
+                    placeholder="Password"
+                    required>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    class="input-box"
+                    placeholder="Konfirmasi Password"
+                    required>
+                <button type="submit" class="btn">
+                Registrasi
+                </button>
+            </form>
+            <p class="form-link">
+                Sudah punya akun?
+                <a href="login.html">Login</a>
+            </p>
+        </section>
+        <!-- footer -->
+        <footer class="logo-footer register-footer">
+            <img
+                class="form-logo"
+                src="images/logo.png"
+                alt="Logo XORA">
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/registrasi.js"></script>
+</body>
+</html>

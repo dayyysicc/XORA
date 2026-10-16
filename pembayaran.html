@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Pembayaran</title>
+    <link rel="stylesheet" href="css/pembayaran.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main class="pembayaran">
+        <header class="pembayaran-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1>Pembayaran</h1>
+        </header>
+
+        <section class="pembayaran-container">
+            <section class="info-film">
+                <h2 id="judulFilm"></h2>
+                <div class="film-content">
+                    <div class="poster-film">
+                    <img id="posterFilm" src="" alt="">
+                    </div>
+
+                    <div class="info-detail">
+                        <div class="film-info">
+                            <div class="lokasi">
+                                <p><strong>Lokasi</strong> <span id="lokasi"></span></p>
+                                <p><strong>Bioskop</strong> <span id="bioskop"></span></p>
+                                <p><strong>Studio</strong> <span id="studio"></span></p>
+                                <p><strong>No. Kursi</strong> <span id="kursiTerpilih">Belum dipilih</span></p>
+                            </div>
+                            <div class="jadwal">
+                                <p><strong>Tanggal</strong> <span id="tanggal"></span></p>
+                                <p><strong>Jam</strong> <span id="jam"></span></p>
+                            </div>                           
+                        </div>
+
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <span>Jumlah Tiket</span>
+                                <span id="jumlahTiket"></span>
+                            </div>
+
+                            <div class="detail-item">
+                                <span>Harga Tiket</span>
+                                <span id="hargaTiket"></span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>              
+            </section>
+
+            <section class="metode-pembayaran">
+                <h2>Metode Pembayaran</h2>
+                <div class="input-group">                    
+                    <label>Metode Pembayaran</label>
+                    <div class="dropdown">
+                        <div class="dropdown-btn" id="metodeBtn">
+                            <div class="dropdown-left">
+                                <img id="metodeImg" src="" alt="Metode" style="display:none;">     
+                                <span id="metodeText">
+                                    Pilih Metode Pembayaran
+                                </span>
+                                <small id="saldoInfo"></small>
+                            </div>
+                            <i class="fa-solid fa-chevron-down" id="metodeIcon"></i>
+                        </div>
+
+                        <div class="dropdown-menu" id="metodeMenu">
+                            <div
+                                class="dropdown-item"
+                                data-img="images/dana.png"
+                                data-value="Dana">
+                                <img src="images/dana.png">
+                                <div class="metode-info">
+                                    <span>Dana</span>
+                                    <small>Saldo Rp11.067</small>
+                                </div>
+                            </div>                           
+                            <div
+                                class="dropdown-item"
+                                data-img="images/gopay.png"
+                                data-value="Gopay">
+                                <img src="images/gopay.png">
+                                <div class="metode-info">
+                                    <span>Gopay</span>
+                                    <small>Saldo Rp21.070.467</small>
+                                </div>
+                            </div>                           
+                            <div
+                                class="dropdown-item"
+                                data-img="images/qris.png"
+                                data-value="Qris">
+                                <img src="images/qris.png">
+                                <span>Qris</span>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">                    
+                    <label>Voucher</label>
+                    <div class="dropdown">
+                        <div class="dropdown-btn" id="voucherBtn">
+                            <div class="dropdown-left">
+                                <img id="voucherImg" src="" alt="Voucher" style="display:none;">     
+                                <span id="voucherText">
+                                    Pilih Voucher
+                                </span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down" id="voucherIcon"></i>
+                        </div>
+
+                        <div class="dropdown-menu" id="voucherMenu">
+                            <div
+                                class="dropdown-item"
+                                data-img="images/voucher dana.png"
+                                data-value="Voucher Dana">
+                                <img src="images/voucher dana.png">
+                                <div class="voucher-info">
+                                    <span class="voucher-title">Voucher Dana</span>
+                                    <small>Hemat Rp10.00</small>
+                                </div>
+                            </div>
+                            <div
+                                class="dropdown-item"
+                                data-img="images/voucher gopay.png"
+                                data-value="Voucher Gopay">
+                                <img src="images/voucher gopay.png">
+                                <div class="voucher-info">
+                                    <span class="voucher-title">Voucher Gopay</span>
+                                    <small>Gratis Biaya Admin XXI (1 Tiket)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="voucherError" class="voucher-error"></p>
+                </div>
+
+                <div class="ringkasan-pembayaran">
+                    <h3>Ringkasan Pembayaran</h3>
+                    <div class="item">
+                        <div class="item-label">
+                            <span>Total Harga Tiket</span>
+                            <small id="rincianHargaTiket"></small>
+                        </div>
+                        <span id="totalHargaTiket"></span>
+                    </div>
+                    <div class="item">
+                        <span>Biaya Admin</span>
+                        <span id="admin">Rp0</span>
+                    </div>
+                    <div class="item">
+                        <div class="item-label">
+                            <span>Potongan Voucher</span>
+                            <small id="rincianVoucher"></small>
+                        </div>
+                        <span id="diskon">Rp0</span>
+                    </div>
+                    <hr>
+                    <div class="item total">
+                        <span>Total</span>
+                        <span id="totalBayar"></span>
+                    </div>
+                    <p id="saldoError" class="saldo-error"></p>
+                </div>
+
+                <button class="btn-bayar" id="btnBayar">
+                    Konfirmasi Pembayaran
+                </button>
+            </section>
+        </section>
+        
+        <!-- POPUP SALDO TIDAK CUKUP -->
+        <div class="popup-overlay" id="saldoPopup">
+            <div class="popup-box">
+                <button class="popup-close" id="closeSaldoPopup">
+                    &times;
+                </button>
+                <div class="popup-icon error">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h2>Saldo Tidak Cukup</h2>
+                <p id="saldoPopupText">
+                    Saldo kamu tidak cukup untuk melakukan pembayaran.
+                </p>
+                <button class="popup-btn" id="closeSaldoBtn">
+                    Mengerti
+                </button>
+            </div>
+        </div>
+
+        <!-- POPUP PEMBAYARAN BERHASIL -->
+        <div class="popup-overlay" id="berhasilPopup">
+            <div class="success-box">
+                <h2>Pembayaran Berhasil!</h2>
+                <p class="success-text">
+                    Tiket kamu berhasil dibeli.
+                </p>
+                <div class="success-content">
+                    <!-- INFO TIKET -->
+                    <div class="ticket-summary">
+                        <h3 id="hasilJudulFilm"></h3>
+                        <p>
+                            <span>No. Pembelian</span>
+                            <strong id="hasilNoPembelian"></strong>
+                        </p>
+                        <p>
+                            <span>Lokasi</span>
+                            <strong id="hasilLokasi"></strong>
+                        </p>
+                        <p>
+                            <span>Bioskop</span>
+                            <strong id="hasilBioskop"></strong>
+                        </p>
+                        <p>
+                            <span>Studio</span>
+                            <strong id="hasilStudio"></strong>
+                        </p>
+                        <p>
+                            <span>No. Kursi</span>
+                            <strong id="hasilKursi"></strong>
+                        </p>
+                        <p>
+                            <span>Tanggal</span>
+                            <strong id="hasilTanggal"></strong>
+                        </p>
+                        <p>
+                            <span>Jam</span>
+                            <strong id="hasilJam"></strong>
+                        </p>
+                        <p>
+                            <span>Jumlah Tiket</span>
+                            <strong id="hasilJumlahTiket"></strong>
+                        </p>
+                    </div>
+
+                    <!-- ringkasan pembayaran -->
+                    <div class="payment-summary">
+                        <h3>Ringkasan Pembayaran</h3>
+                        <div class="payment-summary-item">
+                            <div class="item-label">
+                                <span>Harga Tiket</span>
+                                <small id="hasilRincianHargaTiket"></small>
+                            </div>
+                            <strong id="hasilHargaTiket">Rp0</strong>
+                        </div>
+                        <div class="payment-summary-item">
+                            <span>Biaya Admin</span>
+                            <strong id="hasilAdmin">Rp0</strong>
+                        </div>
+                        <div class="payment-summary-item">
+                            <div class="item-label">
+                                <span>Potongan Voucher</span>
+                                <small id="hasilRincianVoucher"></small>
+                            </div>
+                            <strong id="hasilDiskon">- Rp0</strong>
+                        </div>
+                        <div class="payment-summary-item">
+                            <span>Metode Pembayaran</span>
+                            <strong id="hasilMetode">-</strong>
+                        </div>
+                        <hr>
+                        <div class="payment-summary-item total">
+                            <span>Total Pembayaran</span>
+                            <strong id="hasilTotalPembayaran">Rp0</strong>
+                        </div>
+                    </div>
+
+                    <!-- QR -->
+                    <div class="qr-container">
+                        <img
+                            id="qrTiket"
+                            src=""
+                            alt="QR Code Tiket">
+                    </div>
+                </div>
+
+                <!-- BUTTON -->
+                <div class="success-actions">
+                    <button
+                        class="download-qr"
+                        id="downloadQR">
+                        <i class="fa-solid fa-download"></i>
+                        Download QR
+                    </button>
+                </div>
+                <div class="success-actions success-actions-secondary">
+                    <button class="finish-btn" id="berandaBtn">
+                        Ke Beranda
+                    </button>
+                    <button class="finish-btn" id="riwayatBtn">
+                        Lihat Riwayat Transaksi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/movies.js"></script>
+    <script src="js/pembayaran.js"></script>
+</body>
+</html>

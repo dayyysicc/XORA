@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XORA - Detail Bioskop</title>
+    <link rel="stylesheet" href="css/sedang-tayang.css">
+    <link rel="stylesheet" href="css/segera-hadir.css">
+    <link rel="stylesheet" href="css/detail-bioskop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main class="tayang-container">
+        <header class="tayang-header">
+            <button class="kembali-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1 id="namaBioskop"></h1>
+        </header>
+
+        <h2 class="section-title">Sedang Tayang</h2>
+        <section class="film-list" id="filmListTayang">
+            <!-- diisi otomatis lewat js/detail-bioskop.js, dari js/movies.js -->
+        </section>
+
+        <h2 class="section-title section-title-batas">Segera Hadir</h2>
+        <section class="segera-grid" id="filmListSegera">
+            <!-- diisi otomatis lewat js/detail-bioskop.js, dari js/movies-segera.js -->
+        </section>
+    </main>
+
+    <!-- POPUP SINOPSIS (Segera Hadir) -->
+    <div class="popup-overlay" id="sinopsisPopup">
+        <div class="popup-box">
+            <button class="popup-close" id="closeSinopsisPopup" type="button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img id="popupPoster" src="" alt="">
+            <h3 id="popupJudul"></h3>
+            <p class="popup-genre" id="popupGenre"></p>
+            <p class="popup-tanggal" id="popupTanggal"></p>
+            <p class="popup-sinopsis" id="popupSinopsis"></p>
+
+            <button class="ingatkan-btn" id="ingatkanBtn">
+                <i class="fa-regular fa-bell"></i>
+                <span>Ingatkan Saya</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/movies.js"></script>
+    <script src="js/movies-segera.js"></script>
+    <script src="js/bioskop.js"></script>
+    <script src="js/detail-bioskop.js"></script>
+</body>
+</html>

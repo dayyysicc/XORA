@@ -1,0 +1,707 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #050505;
+    /* backgruound utama */
+    background-image: url("../images/vector.png");
+    /* agak background memenuhi layar */
+    background-size: cover;
+    /* posisi background di tengah */
+    background-position: center;
+    /* background tidak diulang */
+    background-repeat: no-repeat;
+    /* warna default smua tulisan */
+    color: #D9D9D9;
+    /* font utama */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pembayaran{
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    margin: auto;
+}
+
+/* header */
+.pembayaran-header{
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom:35px;
+}
+
+.pembayaran-header h1{
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+/* back button */
+.kembali-btn{
+    width: 50px;
+    height: 50px;
+    border:none;
+    border-radius: 12px;
+    background: #1a1a1a;
+    color:#FFFFFF;
+    font-size:22px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+/* hover */
+.kembali-btn:hover{
+    background: #252525;
+    color:#39FF14;
+}
+
+/* container */
+.pembayaran-container{
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 30px;
+    align-items: start;
+    width: 100%;
+}
+
+.info-film{
+    width: 100%;
+    min-width: 0;
+    background: #171717;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.info-film h2{
+    color:#FFFFFF;
+    font-size:35px;
+    margin-bottom:25px;
+}
+
+.film-content{
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* poster */
+.poster-film{
+    flex-shrink: 0;
+}
+
+.poster-film img{
+    width:160px;
+    display:block;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+/* info film */
+
+.film-info{
+    width:100%;
+    margin-top: -10px;
+}
+
+.film-info p{
+    color:#D9D9D9;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* info lokasi dan jadwal tiket */
+.lokasi,
+.jadwal{
+    margin-top: 18px;
+}
+
+.lokasi p,
+.jadwal p{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 18px;
+    margin-bottom: 8px;
+}
+
+.lokasi strong,
+.jadwal strong{
+    color: #9c9c9c;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.lokasi span,
+.jadwal span{
+    flex:1;
+    text-align:right;
+}
+
+/* detail item */
+.detail-list{
+    margin-top:15px;
+    padding-top:8px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.detail-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+}
+
+.detail-item span:first-child{
+    color: #A9A9A9;   
+    font-size: 18px;
+}
+
+.detail-item span:last-child{
+    text-align:right;
+}
+
+/* metode pembayaran */
+.metode-pembayaran{
+    width: 100%;
+    min-width: 0;
+    background: #171717;
+    border-radius: 20px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.metode-pembayaran h2{
+    color: #FFFFFF;
+    font-size: 30px;
+    margin-bottom: 30px;
+    word-break: break-word;
+}
+
+/* dropdown */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    background: #222222;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dropdown-btn:hover{
+    border-color: #39FF14;
+}
+
+.dropdown-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown-left img{
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.dropdown-left span{
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background: #222222;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown-item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.dropdown-item:hover{
+    background: #333333;
+}
+
+.dropdown-item img{
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* info saldo */
+.metode-info{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metode-info span{
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.metode-info small{
+    color: #9c9c9c;
+    font-size: 13px;
+}
+
+.saldo-info{
+    display: block;
+    margin-top: 5px;
+    color: #9a9a9a;
+    font-size: 13px;
+}
+
+/* voucher */
+.voucher-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.voucher-title{
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
+}
+
+.voucher-info small{
+    font-size:13px;
+    color:#9a9a9a;
+    margin-top:5px;
+}
+
+/* ringkasan pembayaran */
+.ringkasan-pembayaran{
+    margin-top:10px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.ringkasan-pembayaran h3{
+    font-size:20px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.ringkasan-pembayaran .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+.ringkasan-pembayaran .item span:first-child{
+    color: #BFBFBF;
+    font-size: 15px;
+}
+
+.ringkasan-pembayaran .item span:last-child{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ringkasan-pembayaran hr{
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin: 18px 0;
+}
+
+.ringkasan-pembayaran .total span{
+    font-size: 18px;
+    font-weight: 700;
+    color: #18C964;
+}
+
+.item-label{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.item-label small{
+    color: #7a7a7a;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* input pembayaran */
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.input-group label{
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.input-group select{
+    width: 100%;
+    height: 55px;
+
+    background: #222222;
+    color: #FFFFFF;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    padding: 0 15px;
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-group select:hover{
+    border-color: #18C964;
+}
+
+.input-group select:focus{
+    outline: none;
+    border-color: #18C964;
+}
+
+/* info error */
+.saldo-error,
+.voucher-error{
+    margin: 10px 0;
+    color: #ff4d4d;
+    font-size: 14px;
+    text-align: right;
+    display: none;
+}
+
+.btn-bayar{
+    margin-top: auto;
+
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #18C964;
+    color: #FFFFFF;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-bayar:hover{
+    background: #15b357;
+}
+
+/* popup */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.popup-box{
+    position: relative;
+    width: 380px;
+    background: #171717;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+
+    animation: popupIn .25s ease;
+    z-index: 10000;
+}
+
+/* animasi */
+@keyframes popupIn{
+    from{
+        opacity: 0;
+        transform: scale(.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.popup-close{
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: none;
+    color: #999;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popup-icon{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.popup-icon.error{
+    background: rgba(255,70,70,.12);
+    color: #ff4d4d;
+}
+
+.popup-box h2{
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.popup-box p{
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.popup-btn{
+    width: 100%;
+    height: 50px;
+
+    margin-top: 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #18C964;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* popup pembayaran berhasil  */
+.success-box {
+    width: 850px;
+    max-width: 90vw;
+    background: #171717;
+    border-radius: 20px;
+    padding: 30px 35px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+    animation: popupIn .25s ease;
+    position: relative;
+    z-index: 10000;
+}
+
+
+/* icon berhasil */
+.success-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: rgba(24, 201, 100, .12);
+    color: #18C964;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+
+/* judul */
+.success-box h2 {
+    color: #fff;
+    margin: 0 0 5px;
+    font-size: 26px;
+}
+
+.success-text {
+    color: #999;
+    margin: 0 0 25px;
+    font-size: 15px;
+}
+
+/* isi popup (info film, ringkasan pembayaran, qr) */
+.success-content {
+    display: grid;
+    /* 3 kolom */
+    grid-template-columns: 1fr 1fr 190px;
+    gap: 30px;
+    align-items: start;
+    text-align: left;
+}
+
+/* info film */
+.ticket-summary {
+    padding-right: 5px;
+}
+
+.ticket-summary h3 {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 18px;
+}
+
+.ticket-summary p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 12px;
+}
+
+.ticket-summary span {
+    color: #999;
+}
+
+.ticket-summary strong {
+    color: #fff;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* ringkasan pembayaran */
+.payment-summary {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    text-align: left;
+}
+
+.payment-summary h3 {
+    color: #fff;
+    font-size: 16px;
+    margin: 38px 0 18px;
+}
+
+.payment-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+
+.payment-summary-item span {
+    color: #999;
+}
+
+.payment-summary-item strong {
+    color: #fff;
+    font-weight: 500;
+    text-align: right;
+}
+
+.payment-summary hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin: 16px 0;
+}
+
+.payment-summary-item.total {
+    margin-top: 0;
+}
+
+.payment-summary-item.total span,
+.payment-summary-item.total strong {
+    color: #18C964;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* qr */
+.qr-container {
+    width: 190px;
+    height: 190px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    justify-self: center;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.qr-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* button popup */
+.success-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.success-actions-secondary{
+    margin-top: 12px;
+}
+
+.download-qr,
+.finish-btn {
+    flex: 1;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.download-qr {
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.finish-btn {
+    background: #18C964;
+    border: none;
+    color: #fff;
+}
